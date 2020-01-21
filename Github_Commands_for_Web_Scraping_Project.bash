@@ -9,3 +9,9 @@ git log --oneline
 git remote add origin https://github.com/jzl4/Web_Scraping_Project
 git push origin master
 
+# For further updates...
+git status
+git add --all
+git commit --all -m "WHATEVER CHANGE YOU MADE"
+git log --oneline
+git push origin master
