@@ -32,6 +32,25 @@ timestamps = list(map(lambda x: x.replace(' EST',''), timestamps))
 #   6:60pm
 #   5:28pm
 
+######################################################################
+
+# (1) Extend the original file to pull up 3000+ pages (original code supported 2 pages)
+# (2) Learn how to handle broken links (If we try to pull page 4,000 and it doesn't, how to handle?)
+# (2) Learn how to handle problems such as 10 article titles but 9 article bodies?
+# (3) You forgot the first page (page 0).  Your stuff starts from page 2, page 3, onwards.
+# (3) Add back the first page
+
+# Next step:
+# Write the CSV file into Pandas dataframe and start manipulating it
+# Count all of the words and their frequencies in a giant dictionary
+# Classify them in types (economics, markets, company-specific, etc)
+# (Can I also write something about sentiment?)
+# (Do some NLP magic with them)
+
+########################################################################
+
+# Extra work!!!!!!!!!  If time permits!
+
 # Solution 1: If you don't have time, just map all of the time stamps from today to simply today
 #   Ex: Map 8:31 AM to simply Jan 20th 2020
 # And grab the date for prior days (yesterday and earlier)
@@ -54,17 +73,3 @@ my_date = datetime.strptime(date_string, my_format)
 # Link here: https://www.reuters.com/news/archive/marketNews
 # You would essentially be repeating the same project twice (once for business news
 # and once again for market news)
-
-######################################################################
-
-# Next step:
-# Write this into your spyder class and try to actually pull in the data successfully
-# After that, write it to CSV format
-# There should be 32,000 article details (approximately)
-
-# Next step:
-# Write the CSV file into Pandas dataframe and start manipulating it
-# Count all of the words and their frequencies in a giant dictionary
-# Classify them in types (economics, markets, company-specific, etc)
-# (Can I also write something about sentiment?)
-# (Do some NLP magic with them)

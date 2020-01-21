@@ -25,11 +25,11 @@ class ReutersSpider(Spider):
             item['title'] = titles[i]
             item['description'] = summaries[i]
             
-            print('\n')
-            print('#'*50)
-            print('Title:',titles[i])
-            print('Body:',summaries[i])
-            print('\n')
+            #print('\n')
+            #print('#'*50)
+            #print('Title:',titles[i])
+            #print('Body:',summaries[i])
+            #print('\n')
             
             yield item
         
