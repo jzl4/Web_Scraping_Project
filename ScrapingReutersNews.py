@@ -35,10 +35,6 @@ timestamps = list(map(lambda x: x.replace(' EST',''), timestamps))
 ######################################################################
 
 # (1) Extend the original file to pull up 3000+ pages (original code supported 2 pages)
-# (2) Learn how to handle broken links (If we try to pull page 4,000 and it doesn't, how to handle?)
-# (2) Learn how to handle problems such as 10 article titles but 9 article bodies?
-# (3) You forgot the first page (page 0).  Your stuff starts from page 2, page 3, onwards.
-# (3) Add back the first page
 
 # Next step:
 # Write the CSV file into Pandas dataframe and start manipulating it

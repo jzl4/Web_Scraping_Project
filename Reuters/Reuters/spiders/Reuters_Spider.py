@@ -3,10 +3,10 @@ from Reuters.items import ReutersItem
 
 class ReutersSpider(Spider):
     name = 'reuters_spider'
+    
+    n_pages = 100
     allowed_domains = ["https://www.reuters.com/"]
-    start_urls = ["https://www.reuters.com/news/archive/businessNews?view=page&page=2&pageSize=10", "https://www.reuters.com/news/archive/businessNews?view=page&page=3&pageSize=10"]
-    # When the basic code, convert it it something fancier, like this:
-    # start_urls = ['https://www.the-numbers.com/movie/budgets/all/' + str(100*i+1) for i in range(56)]
+    start_urls = ['https://www.reuters.com/news/archive/businessNews?view=page&page={}&pageSize=10'.format(i) for i in range(1,n_pages+1)]
     
     def parse(self, response):
         titles_xpath = '//article[@class="story "]//div[@class="story-content"]//h3[@class="story-title"]/text()'
