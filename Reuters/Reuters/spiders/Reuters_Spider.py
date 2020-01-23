@@ -1,4 +1,40 @@
 
+"""
+# (1) Extend the original file to pull up 3000+ pages (original code supported 2 pages)
+
+# Next step:
+# Write the CSV file into Pandas dataframe and start manipulating it
+# Count all of the words and their frequencies in a giant dictionary
+# Classify them in types (economics, markets, company-specific, etc)
+# (Can I also write something about sentiment?)
+# (Do some NLP magic with them)
+
+########################################################################
+
+# Useful NLP articles to read:
+https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751
+https://www.learndatasci.com/tutorials/sentiment-analysis-reddit-headlines-pythons-nltk/
+https://blog.quiltdata.com/repeatable-nlp-of-news-headlines-using-apache-airflow-newspaper3k-quilt-t4-vega-a0447af57032
+https://www.tutorialspoint.com/create-word-cloud-using-python
+https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk
+https://www.dataquest.io/blog/tutorial-text-analysis-python-test-hypothesis/
+
+
+########################################################################
+
+
+# Extra work: All of this work was for just the business news section
+# You can also extend it to the market news section (if the xpath structure is similar)
+# Link here: https://www.reuters.com/news/archive/marketNews
+# You would essentially be repeating the same project twice (once for business news
+# and once again for market news)
+
+
+"""
+
+# cd C:\\MAIN\\NYCDSA\\Web_Scraping_Project\\Reuters
+# scrapy crawl reuters_spider
+
 from Reuters.items import ReutersItem
 from scrapy import Spider, Request
 from datetime import datetime
@@ -11,7 +47,7 @@ class ReutersSpider(Spider):
     # and each contains a list of 10 archived article URLs
     # If n_pages = 20, we iterate up to https://www.reuters.com/news/archive/businessNews?view=page&page=20&pageSize=10
     # and we can grab information on 20x10 = 200 archived article URLs
-    n_pages = 1
+    n_pages = 100
     start_urls = ['https://www.reuters.com/news/archive/businessNews?view=page&page={}&pageSize=10'.format(i) for i in range(1,n_pages+1)]
     
     # Using the archive page xpaths for the 200 archived article URLs, we can open the original articles fully
@@ -29,8 +65,6 @@ class ReutersSpider(Spider):
     # Now we are on a page like this: https://www.reuters.com/article/us-usa-economy/u-s-weekly-jobless-claims-rise-modestly-labor-market-solid-idUSKBN1ZM1YW
     # Using the xpaths, grab this article's timestamp, title, and body
     def parse_full_article(self, response):
-        print("parsing full article...")
-        print("*"*50)
         
         # Timestamp is a Python datetime object
         timestamp_string = response.xpath('//div[@class="ArticleHeader_date"]/text()').getall()[0]
