@@ -10,5 +10,8 @@ import scrapy
 class ReutersItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    
+    timestamp = scrapy.Field()
     title = scrapy.Field()
-    description = scrapy.Field()
+    body = scrapy.Field()
+    classification = scrapy.Field()
