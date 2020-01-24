@@ -1,34 +1,63 @@
 
 """
-# (1) Extend the original file to pull up 3000+ pages (original code supported 2 pages)
+Don't forget - you need to make a powerpoint presentation (10 min)
 
-# Next step:
-# Write the CSV file into Pandas dataframe and start manipulating it
-# Count all of the words and their frequencies in a giant dictionary
-# Classify them in types (economics, markets, company-specific, etc)
-# (Can I also write something about sentiment?)
-# (Do some NLP magic with them)
+What are the most common topics discussed in these articles?
 
-########################################################################
+Use unsupervised learning (k-means) to classify the articles based on their most
+    common 5-10 words (I probably need about 1,000-5,000 articles to do this)
 
-# Useful NLP articles to read:
-https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751
-https://www.learndatasci.com/tutorials/sentiment-analysis-reddit-headlines-pythons-nltk/
-https://blog.quiltdata.com/repeatable-nlp-of-news-headlines-using-apache-airflow-newspaper3k-quilt-t4-vega-a0447af57032
-https://www.tutorialspoint.com/create-word-cloud-using-python
-https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk
-https://www.dataquest.io/blog/tutorial-text-analysis-python-test-hypothesis/
+Can we look through the "seasonality" trend?
+    Ex: what time during the day we have the most articles published?
+    Ex: a topic x was super popular during month 1, and topic y was super popular during month 2?
+    Ex: Trends in the popularity of certain words, i.e. - the phrase "trade war" appeared
+        a LOT during the month of December or whatever, and then declined in popularity
 
+We can create a matrix of m (number of articles / observations) x n (number of unique words)
+    where each element is how many times a word i appeared in article j
+    This called a "word vector"
 
-########################################################################
+Counting word frequencies in a dictionary
+    https://programminghistorian.org/en/lessons/counting-frequencies
 
+How to get sentiment of news articles
+    https://levelup.gitconnected.com/sentiment-analysis-using-machine-learning-python-9122e03f8f7b
 
-# Extra work: All of this work was for just the business news section
-# You can also extend it to the market news section (if the xpath structure is similar)
-# Link here: https://www.reuters.com/news/archive/marketNews
-# You would essentially be repeating the same project twice (once for business news
-# and once again for market news)
+How to create word clouds?
+    https://www.tutorialspoint.com/create-word-cloud-using-python
+    
+Classifying news articles into categories using k-means clustering
+    https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+    https://www.experfy.com/blog/k-means-clustering-in-text-data
+    https://pythonprogramminglanguage.com/kmeans-text-clustering/
+    (1) How to convert a news article into a collection of word counts
+    (2) How to choose the value k?
+    (3) Don't we need to randomly initialize the k centers, and repeatedly pick random starting points?
 
+Questions to ask: How can we automate something that humans do on a daily basis, for a company?
+    This is how you add value and increase revenues for a corporation (and get hired as a data scientist)
+
+Are there sentiment analysis libraries used for financial sentiment?
+
+What other NLP analysis can I run on these data sets?
+    https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751
+    https://www.learndatasci.com/tutorials/sentiment-analysis-reddit-headlines-pythons-nltk/
+    https://blog.quiltdata.com/repeatable-nlp-of-news-headlines-using-apache-airflow-newspaper3k-quilt-t4-vega-a0447af57032
+    https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk
+    https://www.dataquest.io/blog/tutorial-text-analysis-python-test-hypothesis/
+
+Discussion for further uses:
+    - Using sentiment in financial news articles to automate trading strategies
+    - Using sentiment in customer emails to automate customer service process
+        (does this email from a customer require a human representative to intervene?)
+    - Assess if a news article is fake or not.  Requires a training set of real and fake articles
+        and training a supervised machine learning model on them
+    - Assess whether or not a news source if politically biased or not, and to what extent
+    - Which industries are using NLP?  What projects / business applications are associated with NLP?
+
+Extra work: All of this work was for just the business news section
+    You can also extend it to the market news section (if the xpath structure is similar)
+    Link here: https://www.reuters.com/news/archive/marketNews
 
 """
 
