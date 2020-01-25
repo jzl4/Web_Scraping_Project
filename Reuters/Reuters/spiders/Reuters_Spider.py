@@ -2,11 +2,12 @@
 """
 Don't forget - you need to make a powerpoint presentation (10 min)
 
-What are the most common topics discussed in these articles?
+https://www.nltk.org/howto/sentiment.html
 
-Use unsupervised learning (k-means) to classify the articles based on their most
-    common 5-10 words (I probably need about 1,000-5,000 articles to do this)
-
+Using k-means unsupervised learning: other considerations
+    (2) How to choose the value k?
+    (3) Don't we need to randomly initialize the k centers, and repeatedly pick random starting points?
+    
 Can we look through the "seasonality" trend?
     Ex: what time during the day we have the most articles published?
     Ex: a topic x was super popular during month 1, and topic y was super popular during month 2?
@@ -17,27 +18,15 @@ We can create a matrix of m (number of articles / observations) x n (number of u
     where each element is how many times a word i appeared in article j
     This called a "word vector"
 
-Counting word frequencies in a dictionary
-    https://programminghistorian.org/en/lessons/counting-frequencies
-
 How to get sentiment of news articles
     https://levelup.gitconnected.com/sentiment-analysis-using-machine-learning-python-9122e03f8f7b
-
-How to create word clouds?
-    https://www.tutorialspoint.com/create-word-cloud-using-python
-    
-Classifying news articles into categories using k-means clustering
-    https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
-    https://www.experfy.com/blog/k-means-clustering-in-text-data
-    https://pythonprogramminglanguage.com/kmeans-text-clustering/
-    (1) How to convert a news article into a collection of word counts
-    (2) How to choose the value k?
-    (3) Don't we need to randomly initialize the k centers, and repeatedly pick random starting points?
 
 Questions to ask: How can we automate something that humans do on a daily basis, for a company?
     This is how you add value and increase revenues for a corporation (and get hired as a data scientist)
 
 Are there sentiment analysis libraries used for financial sentiment?
+    No, they are proprietary
+    
 
 What other NLP analysis can I run on these data sets?
     https://towardsdatascience.com/using-word2vec-to-analyze-news-headlines-and-predict-article-success-cdeda5f14751
@@ -47,6 +36,9 @@ What other NLP analysis can I run on these data sets?
     https://www.dataquest.io/blog/tutorial-text-analysis-python-test-hypothesis/
 
 Discussion for further uses:
+    - To do meaningful NLP analysis, I need to split, train, test, etc:
+        https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk
+        https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk
     - Using sentiment in financial news articles to automate trading strategies
     - Using sentiment in customer emails to automate customer service process
         (does this email from a customer require a human representative to intervene?)
